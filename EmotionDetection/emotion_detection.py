@@ -29,6 +29,25 @@ def emotion_detector(text_to_analyze):
         
         dominant_emotion = max(emotions, key=emotions.get)
 
+    # If the response status code is 400, set label and score to None   
+    elif response.status_code == 400:
+		anger = None
+        disgust = None
+        fear = None
+        joy = None
+        sadness = None
+        dominant_emotion = None
+    
+    else:
+        anger = None
+        disgust = None
+        fear = None
+        joy = None
+        sadness = None
+        dominant_emotion = None
+
+    if dominant_emotion == None:
+        return "Invalid text. Please try again!"
 
     return {
         'anger': anger,
