@@ -31,7 +31,7 @@ def emotion_detector(text_to_analyze):
 
     # If the response status code is 400, set label and score to None   
     elif response.status_code == 400:
-		anger = None
+        anger = None
         disgust = None
         fear = None
         joy = None
